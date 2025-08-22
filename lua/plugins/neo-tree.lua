@@ -9,6 +9,13 @@ return {
     },
     lazy = false,
     config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          follow_current_file = {
+            enabled = true,
+          }
+        }
+      })
       vim.keymap.set("n", "<leader>nt", ":Neotree filesystem reveal left<CR>", {})
       vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
     end,
